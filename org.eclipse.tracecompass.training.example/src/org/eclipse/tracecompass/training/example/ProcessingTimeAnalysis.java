@@ -58,7 +58,7 @@ public class ProcessingTimeAnalysis extends TmfAbstractAnalysisModule {
                     STOP_EVENT,
                     END_EVENT,
                     PROCESS_INIT_EVENT,
-//                    PROCESS_START_EVENT,
+                    PROCESS_START_EVENT,
                     PROCESS_END_EVENT
                     );
             /* Initialize the requirements for the analysis: events */
