@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.linuxtools.tmf.core.analysis">
+      <module
+            analysis_module="org.eclipse.tracecompass.training.example.ProcessingTimeAnalysis"
+            automatic="true"
+            id="org.eclipse.tracecompass.training.example.processing.module"
+            name="Processing Analysis">
+         <tracetype
+               class="org.eclipse.tracecompass.lttng2.ust.core.trace.LttngUstTrace">
+         </tracetype>
+      </module>
+   </extension>
+
+</plugin>
