@@ -39,6 +39,7 @@ public class ProcessingTimeStateProvider extends AbstractTmfStateProvider {
         if (stateSystem == null){
             return;
         }
+
         /**
          * Attribute tree:
          * --------------
