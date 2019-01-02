@@ -72,25 +72,25 @@ public class ProcessingTimeStateProvider extends AbstractTmfStateProvider {
         case IEventConstants.END_EVENT: {
             Object stateValue = null;
             updateRequesterState(stateSystem, event, stateValue);
-            break;
+            return;
         }
 
         case IEventConstants.PROCESS_INIT_EVENT: {
-            ITmfStateValue stateValue = TmfStateValue.newValueInt(IEventConstants.ProcessingStates.INITIALIZING.ordinal());
+            Object stateValue = IEventConstants.ProcessingStates.INITIALIZING.ordinal();
             updateProcessingState(stateSystem, event, stateValue);
             return;
         }
 
         case IEventConstants.PROCESS_START_EVENT: {
-            ITmfStateValue stateValue = TmfStateValue.newValueInt(IEventConstants.ProcessingStates.PROCESSING.ordinal());
+            Object stateValue = IEventConstants.ProcessingStates.PROCESSING.ordinal();
             updateProcessingState(stateSystem, event, stateValue);
             return;
         }
 
         case IEventConstants.PROCESS_END_EVENT: {
-            ITmfStateValue stateValue = TmfStateValue.nullValue();
+            Object stateValue = null;
             updateProcessingState(stateSystem, event, stateValue);
-            return;
+            break;
         }
 
         default:
@@ -116,7 +116,7 @@ public class ProcessingTimeStateProvider extends AbstractTmfStateProvider {
         return;
     }
 
-    private static void updateProcessingState(ITmfStateSystemBuilder stateSystem, ITmfEvent event, ITmfStateValue stateValue) {
+    private static void updateProcessingState(ITmfStateSystemBuilder stateSystem, ITmfEvent event, Object stateValue) {
         // get event field with name
         String requester = event.getContent().getFieldValue(String.class, "requester");
         if (requester == null) {
